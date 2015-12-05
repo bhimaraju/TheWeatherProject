@@ -6,7 +6,7 @@ The project uses ASP MVC along with JavaScript to fetch and render weather infor
 
 	1.	Various Wunderground.com APIs : Key to be inserted in Controllers/HomeController.cs and Scripts/jquery.weather.ajax.js
 	2.	Bing Image Search API : Key to be inserted in Controllers/HomeController.cs
-	3.	Google Places JavaScript API: Key to be inserted in the scripts section of Views/Index.cshtml
+	3.	Google Places JavaScript API: Key to be inserted in the scripts section of Views/Home/Index.cshtml
 	4.	Google Maps API: Key to be inserted in Scripts/jquery.weather.ajax.js
 	
 Most locations across the world are supported given that they are specific at least to the city level. The Doppler radar map is supported for locations within the Unites States and Canada only.
