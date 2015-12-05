@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .layout {
+        background-color: white;
+        opacity: 0.75;
+        border-radius: 5px;
+        float: left;
+    }
+
+    div.first-row div {
+        margin-bottom: 10px;
+    }
+
+    div.second-row div {
+        height: 250px;
+    }
+</style>
+
+<div id="loading" style="margin-top:18%;margin-left:48%;margin-right:auto;height:75px;width:75px;">
+    <img src="http://willamette.edu/img/ajax-loader.gif" alt="Loading" height="75" width="75" />
+</div>
+
+<div style="width:1000px;margin: 0 auto;" id="main" hidden class="text-center">
+    <div id="locationField" class="text-center" style="margin:15px 0px auto 0px;">
+        <div id="tempPref" class="text-center" style="width:150px; height:auto; border-radius: 3px; background-color: white; opacity: 0.75;display:inline-block;margin:0px auto auto auto;float:left">
+            <a href="#" units="F" class="C"><h4 style="margin:3px 0 3px 0; color:black">Imperial Units (&#176;F)</h4></a>
+            <a href="#" units="C" class="F" hidden><h4 style="margin:3px 0 3px 0; color:black">Metric Units (&#176;C)</h4></a>
+        </div>
+        <input id="autocomplete" placeholder="Enter a location"
+               type="text" class="form-control" style="float:none;margin:0px auto auto auto;display:inline-block;height:30px" />
+    </div>
+    <br />
+
+    <div class="first-row">
+        <div id="map" style="width:310px;height:300px;float:left;margin-right:10px;" class="layout">
+            <h3 hidden>Map</h3>
+        </div>
+        <div id="conditions" style="width:330px;height:300px; float:left;margin-right:10px;" class="text-center layout">
+            <h3 hidden>Conditions</h3>
+        </div>
+        <div id="twitter" style="width:340px;height:300px;margin:0px;float:right;">
+            @Html.Partial("_twitter");
+        </div>
+    </div>
+    <br />
+    <div class="second-row">
+        <div>
+            <div id="hourly" style="width:650px;height:250px;margin-right:10px;margin-left:0px" class="layout" />
+        </div>
+        <div id="extended" style="width:340px;margin-right:0px" class="text-center layout">
+            <h3 hidden>Forecast</h3>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="/Scripts/jquery.weather.ajax.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR-GOOGLE-PLACES-JS-API-KEY&signed_in=true&libraries=places&callback=initAutocomplete"
+            async defer></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+}
